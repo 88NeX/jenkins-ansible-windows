@@ -1,4 +1,4 @@
----
+
 - hosts: win
   gather_facts: no
   tasks:
