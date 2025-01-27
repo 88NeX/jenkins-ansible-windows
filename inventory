@@ -4,7 +4,7 @@
 # ansible win  -m win_ping
 
 
-dev_server_1 ansible_host=10.77.0.120
+dev_server_1 ansible_host=10.77.0.125
 
 [win:vars]
 ansible_user=admin
