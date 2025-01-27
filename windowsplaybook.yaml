@@ -1,12 +1,11 @@
-
 - hosts: win
   gather_facts: no
   tasks:
-    - name: test powershell
+    - name: Test PowerShell
       win_shell: |
-                get-host
+        Get-Host
       register: result_get_host
 
-    - name: display result_get_host
+    - name: Display result of Get-Host
       debug:
-        var: result_get_host
+        var: result_get_host.stdout
