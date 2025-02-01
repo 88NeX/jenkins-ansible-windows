@@ -9,7 +9,7 @@ test_server_1 ansible_host=10.77.88.226
 
 [win:vars]
 ansible_user=admin
-ansible_password=04707302
+ansible_password=
 ansible_connection=ssh
 ansible_shell_type=cmd
 ansible_ssh_common_args=-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
