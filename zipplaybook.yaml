@@ -1,0 +1,23 @@
+---
+- name: Install or Reinstall 7-Zip on Windows
+  hosts: windows
+  gather_facts: no
+  tasks:
+
+    - name: Check if 7-Zip is installed
+      ansible.windows.win_reg_stat:
+        path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\7-Zip
+      register: seven_zip_installed
+      ignore_errors: yes
+
+    - name: Uninstall 7-Zip if installed
+      ansible.windows.win_command: '"C:\Program Files\7-Zip\Uninstall.exe" /S'
+      when: seven_zip_installed.exists
+
+    - name: Wait for uninstallation to complete
+      ansible.windows.win_wait_for:
+        timeout: 10
+      when: seven_zip_installed.exists
+
+    - name: Install 7-Zip
+      ansible.windows.win_command: 'C:\7z.exe /S'
