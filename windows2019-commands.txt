@@ -42,4 +42,15 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 
 As admin user:
 ssh-keygen -t rsa -b 4096
-cpi "C:\Users\%username%\.ssh\id_rsa.pub" "C:\Users\%username%\.ssh\authorized_keys"
+cpi "C:\Users\%username%\ssh\id_rsa.pub" "C:\Users\%username%\ssh\authorized_keys"
+cpi "C:\Users\%username%\ssh\id_rsa.pub" "C:\Users\programdata\ssh\administrators_authorized_keys"
+
+#####################
+# Jenkins credentials
+#####################
+
+With a private key create credentials for jenkins
+Dashboard - jenkins setup - credentials - domain global - add credentials - ssh username with private key
+Enter ID and admin username, check enter directly private key, press add button and paste private key. click on create and youll see - credentials creates properly. Copy ID and save for pypeline
+
+
