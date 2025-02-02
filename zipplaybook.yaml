@@ -1,6 +1,6 @@
 ---
 - name: Install or Reinstall 7-Zip on Windows
-  hosts: windows
+  hosts: win
   gather_facts: no
   tasks:
 
