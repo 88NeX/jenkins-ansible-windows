@@ -43,7 +43,12 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 As admin user:
 ssh-keygen -t rsa -b 4096
 cpi "C:\Users\%username%\ssh\id_rsa.pub" "C:\Users\%username%\ssh\authorized_keys"
-cpi "C:\Users\%username%\ssh\id_rsa.pub" "C:\Users\programdata\ssh\administrators_authorized_keys"
+cpi "C:\Users\%username%\ssh\id_rsa.pub" "C:\programdata\ssh\administrators_authorized_keys"
+
+OR
+
+cpi "C:\programdata\ssh\id_rsa.pub" "C:\programdata\ssh\administrators_authorized_keys"
+cpi "C:\programdata\ssh\id_rsa.pub" "C:\Users\%username%\ssh\authorized_keys"
 
 #####################
 # Jenkins credentials
