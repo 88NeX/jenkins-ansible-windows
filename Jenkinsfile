@@ -21,7 +21,7 @@ pipeline {
         stage('Ansible Playbooks in Gitlab Repo') {
             steps {
              
-                ansiblePlaybook credentialsId: '767da9aa-77d7-445c-9b91-8f60bf9af9bf', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'windowsplaybook.yaml'
+                ansiblePlaybook credentialsId: 'secret', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'windowsplaybook.yaml'
                 
              }
                
