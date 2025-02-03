@@ -6,7 +6,16 @@
       win_shell: |
                 get-host
       register: result_get_host
+      
+      - name: test net
+      win_shell: |
+                ipconfig /all
+      register: result_ip
 
     - name: display result_get_host
       debug:
         var: result_get_host
+        
+      - name: display result_ip
+      debug:
+        var: result_ip
