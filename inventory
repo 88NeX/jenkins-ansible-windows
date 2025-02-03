@@ -18,4 +18,4 @@ ansible_become_method=runas
 
 
 [win]
-test_server_1
+dev_server_1
